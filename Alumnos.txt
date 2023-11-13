@@ -1,0 +1,1 @@
+  No | MATRICULA | NOMBRE        | APELLIDO P.    |  APELLIDO MAT.   | EDAD  | SEXO       
