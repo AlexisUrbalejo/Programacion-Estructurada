@@ -44,3 +44,4 @@ long validanum_long(long ri, long rf ,const char msg[],const char msger[])
 	return num;
     system("PAUSE");
 }
+
