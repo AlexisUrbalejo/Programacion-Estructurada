@@ -2,46 +2,45 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <time.h>
 
-int validanum_int(int ri, int rf ,const char msg[],const char msger[]);
-long validanum_long(long ri, long rf ,const char msg[],const char msger[]);
-int aleatorio(int ri,int rf);
+int valinum(int ri, int rf, const char msge[]);
+int Valicad(char cadena[],int in);
 
-int validanum_int(int ri, int rf , const char msg[], const char msger[])
+
+
+int valinum(int ri, int rf, const char msge[])
 {
-	char xnum[30];
-	int num;
-	do{
-		puts(msg);
-		fflush(stdin);
-		gets(xnum);
-		num=atoi(xnum);
-		if (num<ri || num> rf)
-		{
-			printf("%s \n",msger);
-		}	
-	}while(num<ri||num>rf);
-	return num;
-    system("PAUSE");	
-	
+    char xnum[30];
+    int num,op;
+    do{
+        printf("%s",msge);
+        fflush(stdin);
+        gets(xnum);
+        num = atoi(xnum);
+        if(num<ri || num>rf)
+        {
+            printf("ERROR: Numero fuera de rango, intente de nuevo \n");
+            system("PAUSE");
+        }
+    
+
+    }while(num<ri || num>rf);
+    return num;
 }
 
-long validanum_long(long ri, long rf ,const char msg[],const char msger[])
+int Valicad(char cadena[])
 {
-	char xnum[50];
-	long num;
-	do{
-		puts(msg);
-		fflush(stdin);
-		gets(xnum);
-		num=atol(xnum);
-		if (num<ri || num> rf)
-		{
-			printf("%s \n",msger);
-		}	
-	}while(num<ri||num>rf);
-	return num;
-    system("PAUSE");
+     int i;
+    
+    do
+    {
+        for(i = 0; i < strlen(cadena); i++) 
+        {
+            if(isdigit(cadena[i]) || (cadena[i]==' ' && cadena[i+1]==' ')) 
+            {
+                return 1;
+            }
+        }
+    }while(isdigit(cadena[i]) != 0);
+        return 0;
 }
-
